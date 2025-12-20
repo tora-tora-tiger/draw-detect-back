@@ -45,10 +45,10 @@ interface ApiResponse<T> {
 ### 出力
 
 ```ts
-interface TopicResponse {
+interface TopicResponse = ApiResponse<{
   topic: string;
   word: string;
-}
+}>
 ```
 
 ## お題推測
@@ -77,9 +77,9 @@ interface GuessRequest {
 ### 出力
 
 ```ts
-interface GuessResponse {
+interface GuessResponse  = ApiRespnse<{
   guessWord: string;
-}
+}>
 ```
 
 ## エラー定義
