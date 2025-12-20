@@ -86,7 +86,7 @@ interface GuessResponse {
 - `FILE_TOO_LARGE`
 - `INTERNAL_SERVER_ERROR`
 - `TOPIC_GENERATION_ERROR`
-- `GUESS_FAILED`
+- `GUESS_ERROR`
 - `LLM_NOT_AUTHORIZED`
 - `LLM_CONNECTION_FAILED`
 - `LLM_RATE_LIMIT_EXCEEDED`
@@ -118,13 +118,13 @@ interface GuessResponse {
 
 エラーコードが存在しないその他の処理エラー
 
-### `TOPIC_GENERATION_FAILED`
+### `TOPIC_GENERATION_ERROR`
 
 コード: 500
 
 お題生成中のエラー
 
-### `GUESS_FAILED`
+### `GUESS_ERROR`
 
 コード: 500
 
