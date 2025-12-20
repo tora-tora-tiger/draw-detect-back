@@ -7,7 +7,10 @@
 ## 形式
 
 入力: `application/json` <br />
-出力: `application/problem+json`
+出力:
+
+- 成功時: `application/json`
+- エラー時: `application/problem+json`
 
 出力形式は以下の型を基本とする。エラー時のフォーマットは RFC9457 を参考にする。
 
