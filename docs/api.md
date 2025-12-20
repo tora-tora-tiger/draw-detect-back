@@ -61,7 +61,7 @@ interface TopicResponse {
 
 ### 仕様
 
-- 受信形式: multipart/form-data
+- `Content-Type`: `multipart/form-data`
 - 画像形式: PNG
 <!-- - 最大ファイルサイズ -->
 
