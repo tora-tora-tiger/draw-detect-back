@@ -1,0 +1,18 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,jsx,ts,tsx,json,jsonc,css}" # https://biomejs.dev/ja/internals/language-support/
+      run: |
+        pnpm biome lint --write --error-on-warnings {staged_files}
+
+
+pre-push:
+  parallel: true
+  commands:
+    prevent-direct-push:
+      run: |
+        node scripts/prevent-direct-push.js
+
+    typecheck:
+      run: pnpm typecheck
