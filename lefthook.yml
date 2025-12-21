@@ -1,6 +1,8 @@
 pre-commit:
-  parallel: true
+  parallel: false
   commands:
+    typegen:
+      run: pnpm cf-typegen
     lint:
       glob: "*.{js,jsx,ts,tsx,json,jsonc,css}" # https://biomejs.dev/ja/internals/language-support/
       run: |

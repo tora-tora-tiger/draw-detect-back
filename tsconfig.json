@@ -8,6 +8,7 @@
     "lib": ["ESNext"],
     "jsx": "react-jsx",
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["./worker-configuration.d.ts"]
   }
 }
