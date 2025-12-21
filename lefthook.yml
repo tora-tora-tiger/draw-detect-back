@@ -5,6 +5,7 @@ pre-commit:
       glob: "*.{js,jsx,ts,tsx,json,jsonc,css}" # https://biomejs.dev/ja/internals/language-support/
       run: |
         pnpm biome check --write --error-on-warnings {staged_files}
+      stage_fixed: true
 
 
 pre-push:
