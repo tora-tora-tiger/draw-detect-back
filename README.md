@@ -1,21 +1,25 @@
-```txt
-npm install
-npm run dev
+# Draw Detect backend
+
+## 動作確認済み環境
+
+- node: 24.12.0
+- pnpm: 10.26.1
+
+## VSCode で開く場合
+
+workspace を利用して設定を共有しています。  
+`detect-draw-back.code-workspace` ファイルを VSCode で開いてください。
+
+## 開発環境の起動方法
+
+```
+git clone https://github.com/tora-tora-tiger/draw-detect-back.git
+pnpm i
+pnpm dev
 ```
 
-```txt
-npm run deploy
-```
+## 仕様
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+- [要件](./docs/requirements.md)
+- [技術要件](./docs/tech.md)
+- [API仕様](./docs/api.md)
