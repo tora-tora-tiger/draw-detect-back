@@ -1,19 +1,19 @@
+import { zValidator } from "@hono/zod-validator";
 import { factory } from "@/factory";
 import { createLLMClient } from "@/lib/llm/client";
 import { createLLM } from "@/lib/llm/llm.factory";
 import { ok } from "@/utils/response";
+import { GuessRequestSchema } from "./type";
 
 // Hono インスタンスを作成
 const guess = factory.createApp();
 
-guess.post("/", async c => {
+guess.post("/", zValidator("form", GuessRequestSchema), async c => {
   const llm = createLLM(c);
   const llmClient = createLLMClient(llm);
 
   try {
-    const body = await c.req.parseBody();
-    const topic = body.topic as string;
-    const image = body.image as File;
+    const { topic, image } = c.req.valid("form");
 
     const guessWord = await llmClient.guessWord(topic, image);
 
