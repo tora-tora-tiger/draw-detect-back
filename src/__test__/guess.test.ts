@@ -2,9 +2,8 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, test } from "vitest";
+import type { GuessResponse } from "@/features/guess/type";
 import app from "@/index";
-import type { ApiResponse } from "@/types/api.types";
-import type { TopicResult } from "../features/topics/type";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,16 +41,14 @@ describe("お題推測APIのテスト", () => {
 
     expect(res.status).toBe(200);
 
-    const body = (await res.json()) as ApiResponse<TopicResult>;
+    const body = (await res.json()) as GuessResponse;
 
     expect(body.isSuccess).toBe(true);
 
     if (body.isSuccess) {
       expect(body.data).toBeDefined();
-      expect(body.data.topic).toBeDefined();
-      expect(body.data.word).toBeDefined();
-      expect(typeof body.data.topic).toBe("string");
-      expect(typeof body.data.word).toBe("string");
+      expect(body.data.guessWord).toBeDefined();
+      expect(typeof body.data.guessWord).toBe("string");
     }
   });
 
