@@ -7,6 +7,7 @@ export default defineConfig({
   test: {
     environment: "node", // テスト環境では Node.js 環境を使用（process.env にアクセス可能）
     env: dotenv.config({ path: ".env" }).parsed,
+    testTimeout: 20000,
     typecheck: {
       enabled: true,
       include: ["**/*.{test,spec}.?(c|m)[jt]s?(x)"],

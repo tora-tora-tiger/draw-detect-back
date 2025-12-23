@@ -14,7 +14,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:llm-api": "RUN_INTEGRATION_TESTS=true vitest run"
   },
   "dependencies": {
     "@google/genai": "^1.34.0",
