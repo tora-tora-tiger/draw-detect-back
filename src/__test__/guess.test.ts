@@ -24,8 +24,7 @@ describe("お題推測APIのテスト", () => {
     type: "image/png",
   });
 
-  // runtime の違いで失敗するが、devでは成功するため、一旦スキップにする
-  testFn.skip("お題推測APIが正しいレスポンスを返す", async () => {
+  testFn("お題推測APIが正しいレスポンスを返す", async () => {
     const formData = new FormData();
     formData.append("topic", "animals");
     formData.append("image", testImage);
