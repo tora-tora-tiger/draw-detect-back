@@ -19,7 +19,7 @@ guess.post("/", zValidator("form", GuessRequestSchema), async c => {
 
     const guessWord = await srv.guess(topic, image);
 
-    return c.json(ok({ guessWord }));
+    return c.json(ok(guessWord));
   } catch {
     // console.error("Error in guess endpoint:", error);
     return c.json(
