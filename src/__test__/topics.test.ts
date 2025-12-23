@@ -11,11 +11,16 @@ describe("お題生成APIのテスト", () => {
   // 環境変数がない場合はテストをスキップ
   const testFn = runIntegrationTests ? test : test.skip;
 
-  // runtime の違いで失敗するが、devでは成功するため、一旦スキップにする
-  testFn.skip("お題生成APIが正しいレスポンスを返す", async () => {
-    const res = await app.request("/api/topics/generate", {
-      method: "POST",
-    });
+  testFn("お題生成APIが正しいレスポンスを返す", async () => {
+    const res = await app.request(
+      "/api/topics/generate",
+      {
+        method: "POST",
+      },
+      {
+        GEMINI_API_KEY: process.env.GEMINI_API_KEY || "",
+      },
+    );
 
     expect(res.status).toBe(200);
 
