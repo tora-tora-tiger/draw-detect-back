@@ -14,6 +14,6 @@ describe("guessサービスのテスト", () => {
     const result = await service.guess("animals", new File([], "test.png"));
 
     expectTypeOf(result).toEqualTypeOf<GuessResult>();
-    expect(result).toEqual({ gueessWord: "dog" });
+    expect(result).toEqual({ guessWord: "dog" });
   });
 });

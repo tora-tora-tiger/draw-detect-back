@@ -9,7 +9,7 @@ const GuessRequestSchema = z.object({
 type GuessRequest = z.infer<typeof GuessRequestSchema>;
 
 interface GuessResult {
-  gueessWord: string;
+  guessWord: string;
 }
 
 type GuessResponse = ApiResponse<GuessResult>;
