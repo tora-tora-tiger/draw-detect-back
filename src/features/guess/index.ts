@@ -21,7 +21,6 @@ guess.post("/", zValidator("form", GuessRequestSchema), async c => {
 
     return c.json(ok(guessWord));
   } catch {
-    // console.error("Error in guess endpoint:", error);
     return c.json(
       {
         type: "INTERNAL_SERVER_ERROR",
