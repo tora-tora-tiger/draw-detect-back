@@ -9,6 +9,9 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "noEmit": true,
-    "types": ["./worker-configuration.d.ts"]
+    "types": ["./worker-configuration.d.ts"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }
