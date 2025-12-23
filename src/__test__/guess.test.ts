@@ -52,7 +52,7 @@ describe("お題推測APIのテスト", () => {
     }
   });
 
-  // ここでは入力バリデーションのテストを行い、それ移行到達する場合は失敗なので LLM の API キーは使わない
+  // ここでは入力バリデーションのテストを行い、それ以降到達する場合は失敗なので LLM の API キーは使わない
   // 故に runIntegrationTests に関係なく実行する
   describe("不正なリクエストに対して400エラーを返す", () => {
     test("topicが欠落している場合", async () => {
@@ -93,7 +93,7 @@ describe("お題推測APIのテスト", () => {
       expect(res.status).toBe(400);
     });
 
-    test("imageがFile出ない場合", async () => {
+    test("imageがFileでない場合", async () => {
       const formData = new FormData();
       formData.append("topic", "animals");
       formData.append("image", "not-a-file"); // 故意に不正な型を使用
