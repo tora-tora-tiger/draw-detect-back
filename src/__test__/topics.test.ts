@@ -36,11 +36,11 @@ describe("お題生成APIのテスト", () => {
       expect(typeof body.data.word).toBe("string");
     }
   });
+});
 
-  test("存在しないエンドポイントは404を返す", async () => {
-    const res = await app.request("/invalid-endpoint", {
-      method: "GET",
-    });
-    expect(res.status).toBe(404);
+test("存在しないエンドポイントは404を返す", async () => {
+  const res = await app.request("/invalid-endpoint", {
+    method: "GET",
   });
+  expect(res.status).toBe(404);
 });
